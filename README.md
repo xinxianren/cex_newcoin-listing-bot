@@ -29,7 +29,7 @@ Barbotine Listing is the fastest listing bot on the market because it uses webso
  
 ## Demo
 
-![Barbotine Listing Bot demo](http://url/to/img.png)
+![Barbotine Listing Bot demo](https://cdn.discordapp.com/attachments/876447732259225612/1095807659082518579/listing.gif)
 
 [video demo](https://youtu.be/MBRManvUWhI)
 
