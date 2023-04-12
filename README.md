@@ -75,38 +75,24 @@ python main.py <exchange> <crypto-pair> <balance-usdt-to-use> <requests-speed>
 ```
 
 
-* ```<exchange>``` = the mode you wanna use.
+* ```<exchange>``` = the exchange you wanna use among all [ccxt](https://github.com/ccxt/ccxt) exchanges.
   
-  * ```fake-money``` will run the bot with the balance-usdt-to-use you put, with a virtual balance, just to test.
-  * ```classic``` will run the bot with real USDT.
-  * ```delta-neutral```will run the bot with real USDT also, but in a delta-neutral situation. (a bit less profits but you won't loose a cent if the crypto you're using dump in 5 minutes (for very very careful people).
-  
-  
-  
-* ```<symbol-renew-time-minutes>``` = the timeframe you wanna use to switch symbol. If you put 60, it will renew the symbol each hour. Note that the new symbol is automatically selected by the [best_symbol.py](best-symbol.py) script if you don't put a {symbol}. Default: 15
-
-
+* ```<crypto-pair>``` = the crypto-pair you wanna launch the bot on. Example: NELSO/USDT (it doesn't exist)
 
 * ```<balance-usdt-to-use>``` = how to be clearer? 
 
-
-* ```<exchange1,2,3>``` = the three exchanges you want to use among all the CCXT-compatible exchanges. Default: binance okx kucoin (All the 3 have to be correctly configured in [exchange_config.py](exchange_config.py)).
-
-
-* ```[symbol]``` = Not mandatory. If you put a [symbol], it will renew but on the same symbol every time. Every time it renews, it sells all the crypto and rebuy the crypto asset at the new price. 
-
-Note: you can put a minimum profit in USD or % in [exchange_config.py](exchange_config.py). The bot will only take the trade if the profit is > (superior) to your value.
+* ```<requests-speed>``` = the requests speed you wanna use among ```slow```,```medium```,```fast```,```supersonic```. (```supersonic``` is really faster than ```fast```, be careful for your CPU)
 
 Examples:
 
 ```sh
-python run.py fake-money 15 500 binance okx kucoin EOS/USDT    # run the system with 500 USDT and renew symbol every 15 minutes, with binance okx and kucoin
+python main.py kucoin NELSO/USDT 500 medium
 ```
 ```sh
-python run.py classic 15 1000 binance phemex bybit SOL/USDT   # run the system with 1000 USDT on binance phemex and bybit on SOL/USDT continuously (change the symbol to SOL/USDT each 15 minutes).
+python main.py binance NELSO/USDT 140 supersonic 
 ```
 ```sh
-python run.py delta-neutral 60 750 okx cryptocom huobi   # run the system in a delta-neutral situation with 750 USDT and renew the symbol each hour, on okx crypto.com and huobi. Note that with same amount of USDT, the delta-neutral mode will have 2/3 of the profits of the classic mode because it has less liquidity to invest in arbitrage opportunities.
+python main.py binance NELSO/USDT 10000 low 
 ```
 
 ## Contact
@@ -121,13 +107,6 @@ Email: [nelso@barbotine.capital](mailto:nelso@barbotine.capital)
  
 ## Full version
 
-There is also a full version which operates with real dollars.
+There is also a full version which operates with real dollars. (soon)
 
-The profits vary a lot from one month to another, because it depends a lot of market conditions (can go from 5% to 40% monthly).
-
-[Current profits](https://barbotine.capital/barbotine-arbitrage-instance)
-
-Most of the time, the more volatile a crypto asset is, the more opportunities there are (because exchanges struggle more to have the same price). 
-
-You can now buy the source code of that real version!
-Link: [https://get.barbotine.capital](https://get.barbotine.capital/product/full-package-of-barbotine)
+It will soon be available for purchase for $25, stay updated on [barbotine.capital](https://barbotine.capital)
